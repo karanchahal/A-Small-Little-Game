@@ -1,7 +1,13 @@
 package com.karan.rain;
 
+import com.karan.rain.graphics.Screen;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBuffer;
+import java.awt.image.DataBufferInt;
 
 /**
  * Created by user on 20/11/2015.
@@ -19,12 +25,20 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     private JFrame frame;
     public boolean running = false;
 
+    private Screen screen;
+
+    // a raster is a group of pixels
+    private BufferedImage image = new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB); // basically an image with a buffer
+    private int[] pixels = ((DataBufferInt)image.getRaster().getDataBuffer()).getData();  // converting this image object into a array of integers to  signal which pixels recieve which color!
+
+
     public Game() {
 
         Dimension size = new Dimension(width*scale,height*scale);
         setPreferredSize(size); // it is a method of the Canvas
 
         frame = new JFrame();
+        screen =  new Screen(width,height);
 
     }
 
@@ -50,8 +64,28 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         while(running) {
             System.out.println("Running");
             //rendering and updating the game
+            update(); // to be handled at 60 fps per second
+            render(); // render as fast as the computer can
         }
 
+    }
+
+    public void update() {
+
+    }
+    public void render() {
+        BufferStrategy bs = getBufferStrategy();
+        if(bs == null) {
+            createBufferStrategy(3);
+            return;
+        }
+
+        Graphics g = bs.getDrawGraphics();
+        g.setColor(new Color(80,40,100));
+        g.fillRect(0, 0, getWidth(), getHeight());
+        g.dispose();
+
+        bs.show();
     }
 
     public static void main(String[] args) {
@@ -68,3 +102,12 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     }
 
 }
+
+
+
+
+
+
+
+
+
