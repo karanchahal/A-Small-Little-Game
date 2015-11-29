@@ -24,6 +24,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     private Thread thread;
     private JFrame frame;
     public boolean running = false;
+    int x =0,y= 0;
 
     private Screen screen;
 
@@ -100,7 +101,8 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
 
 
     public void update() {
-
+        x++; // updating our offsets for amp movement
+        y++;
     }
     public void render() {
         BufferStrategy bs = getBufferStrategy(); // our buffer strategy creates 3 buffers
@@ -111,7 +113,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
 
         screen.clear(); // clear shte screen before printing new frame
 
-        screen.render();
+        screen.render(x,y);
 
         for(int i=0;i< pixels.length;i++) {
             pixels[i] = screen.pixels[i]; // converts screen pixel array to display pixel array
