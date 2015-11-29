@@ -1,6 +1,7 @@
 package com.karan.rain;
 
 import com.karan.rain.graphics.Screen;
+import com.karan.rain.input.Keyboard;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +17,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
 
     //as we extend canvas we should serialize the class
     private static final long serialVersionUID =1L;
-
+    private Keyboard key; // adds key input object
     public static int width = 300;
     public static int height = width / 16*9;
     public static int scale = 3;
@@ -40,6 +41,9 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
 
         frame = new JFrame();
         screen =  new Screen(width,height);
+        key = new Keyboard();
+
+        frame.addKeyListener(key);
 
     }
 
@@ -70,12 +74,15 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         int updates =0;   // you know this
         while(running) {
 
+
+
             long now = System.nanoTime(); // time at this exact moment
             delta += (now - lastTime)/ns; // now here is the core logic where it sees how many blocks of 60 does theis time fit into and if its nore than then update runs accordingly
 
             lastTime = now;
 
             while(delta >= 1){
+
                 //rendering and updating the game
                 update(); // to be handled at 60 fps per second ,only runs 60 times in one second
                 updates++;
@@ -101,8 +108,21 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
 
 
     public void update() {
-        x++; // updating our offsets for amp movement
-        y++;
+        key.update();
+        if(key.up) {
+            y-=5;
+        }
+        if(key.down) {
+            y+=5;
+        }
+        if(key.right) {
+            x+=5;
+        }
+        if(key.left) {
+            x-=5;
+        }
+
+
     }
     public void render() {
         BufferStrategy bs = getBufferStrategy(); // our buffer strategy creates 3 buffers
