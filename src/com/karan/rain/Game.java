@@ -20,7 +20,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     public static int width = 300;
     public static int height = width / 16*9;
     public static int scale = 3;
-
+    public static String title = "Rain";
     private Thread thread;
     private JFrame frame;
     public boolean running = false;
@@ -61,14 +61,42 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
 
     public void run() {
 
+        long lastTime = System.nanoTime();
+        long timer = System.currentTimeMillis();
+        final double ns = 1000000000.0 / 60.0;
+        double delta = 0;
+        int frames = 0;
+        int updates =0;
         while(running) {
-            System.out.println("Running");
-            //rendering and updating the game
-            update(); // to be handled at 60 fps per second
-            render(); // render as fast as the computer can
-        }
 
+            long now = System.nanoTime();
+            delta += (now - lastTime)/ns;
+            lastTime = now;
+
+            while(delta >= 1){
+                //rendering and updating the game
+                update(); // to be handled at 60 fps per second
+                updates++;
+                delta--;
+            }
+
+            render(); // render as fast as the computer can
+            frames++;
+
+            if(System.currentTimeMillis() - timer > 1000) {
+                timer+=1000;
+
+                System.out.println(updates + "updates, " + frames + "fps");
+                frame.setTitle(title + " running at the blinding speed of "+ "updates " + frames + " and fps");
+
+                frames = 0;
+                updates =0;
+            } //will happen once per second so we can display the FPS
+
+        }
+        stop();
     }
+
 
     public void update() {
 
@@ -80,9 +108,21 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
             return;
         }
 
+        screen.clear();
+
+        screen.render();
+
+        for(int i=0;i< pixels.length;i++) {
+            pixels[i] = screen.pixels[i];
+        }
+
         Graphics g = bs.getDrawGraphics();
-        g.setColor(new Color(80,40,100));
+
+        /*g.setColor(new Color(80,40,100));
         g.fillRect(0, 0, getWidth(), getHeight());
+        */
+        g.drawImage(image,0,0,getWidth(),getHeight(),null);
+
         g.dispose();
 
         bs.show();
@@ -91,7 +131,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     public static void main(String[] args) {
         Game game = new Game(); // starting our game
         game.frame.setResizable(false); // important causes tons of graphical errors
-        game.frame.setTitle("Rain");
+        game.frame.setTitle(Game.title);
         game.frame.add(game); // We can do this is by using "implements Canvas" makes it a part of the Canvas library so we can actually add an instance/component of game in the frame
         game.frame.pack(); // pack sets the size of the frame according to the component which we did in our constructor
         game.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
