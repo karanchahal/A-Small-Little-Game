@@ -20,7 +20,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     public static int width = 300;
     public static int height = width / 16*9;
     public static int scale = 3;
-    public static String title = "Rain";
+    public static String title = "Rain"; //  soft coding the title
     private Thread thread;
     private JFrame frame;
     public boolean running = false;
@@ -61,33 +61,34 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
 
     public void run() {
 
-        long lastTime = System.nanoTime();
-        long timer = System.currentTimeMillis();
-        final double ns = 1000000000.0 / 60.0;
-        double delta = 0;
-        int frames = 0;
-        int updates =0;
+        long lastTime = System.nanoTime(); //  gets start game time in nanoseconds
+        long timer = System.currentTimeMillis();  // gets current system time
+        final double ns = 1000000000.0 / 60.0; // divides 1 second or 10^9 nano seconds into  blocks of 60
+        double delta = 0; // used to to run update every second
+        int frames = 0;   // how much rendering is possible in 1 second frames per second
+        int updates =0;   // you know this
         while(running) {
 
-            long now = System.nanoTime();
-            delta += (now - lastTime)/ns;
+            long now = System.nanoTime(); // time at this exact moment
+            delta += (now - lastTime)/ns; // now here is the core logic where it sees how many blocks of 60 does theis time fit into and if its nore than then update runs accordingly
+
             lastTime = now;
 
             while(delta >= 1){
                 //rendering and updating the game
-                update(); // to be handled at 60 fps per second
+                update(); // to be handled at 60 fps per second ,only runs 60 times in one second
                 updates++;
                 delta--;
             }
 
-            render(); // render as fast as the computer can
+            render(); // render as fast as the computer can how much can it render in 1 second
             frames++;
 
-            if(System.currentTimeMillis() - timer > 1000) {
+            if(System.currentTimeMillis() - timer >= 1000) { // this means that if its been one second or not then duly updates the counter
                 timer+=1000;
 
                 System.out.println(updates + "updates, " + frames + "fps");
-                frame.setTitle(title + " running at the blinding speed of "+ "updates " + frames + " and fps");
+                frame.setTitle(title + "| ups " + updates + " and fps " + frames);
 
                 frames = 0;
                 updates =0;
@@ -102,28 +103,28 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
 
     }
     public void render() {
-        BufferStrategy bs = getBufferStrategy();
+        BufferStrategy bs = getBufferStrategy(); // our buffer strategy creates 3 buffers
         if(bs == null) {
             createBufferStrategy(3);
             return;
         }
 
-        screen.clear();
+        screen.clear(); // clear shte screen before printing new frame
 
         screen.render();
 
         for(int i=0;i< pixels.length;i++) {
-            pixels[i] = screen.pixels[i];
+            pixels[i] = screen.pixels[i]; // converts screen pixel array to display pixel array
         }
 
-        Graphics g = bs.getDrawGraphics();
+        Graphics g = bs.getDrawGraphics(); // gets drawable object
 
         /*g.setColor(new Color(80,40,100));
-        g.fillRect(0, 0, getWidth(), getHeight());
+        g.fillRect(0, 0, getWidth(), getHeight()); // background colour code
         */
-        g.drawImage(image,0,0,getWidth(),getHeight(),null);
+        g.drawImage(image,0,0,getWidth(),getHeight(),null); // draws image object wihich is buffered image
 
-        g.dispose();
+        g.dispose(); // clears everything
 
         bs.show();
     }
