@@ -44,7 +44,7 @@ public class Screen {
                 int xx = x+xOffset;
 
                //if(y >= height || x >=width || y <0 || x < 0) break; // here we check for out of bounds baby
-                int tileIndex = ((xx >> 4)&MAP_SIZE_MASK) + ((yy >> 4)&MAP_SIZE_MASK) * MAP_SIZE; // using bit wise operators as we need to do this calculation a lot of times
+                int tileIndex = ((xx >> 2)&MAP_SIZE_MASK) + ((yy >> 2)&MAP_SIZE_MASK) * MAP_SIZE; // using bit wise operators as we need to do this calculation a lot of times
                 // we get this tile index from x and y by basically dividing x and y by 2^2 which is 4 basically and getting the tile index for that x and y co
                 // -ordinates
                 //MAP SIZE BITS
