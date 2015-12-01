@@ -95,7 +95,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
             if(System.currentTimeMillis() - timer >= 1000) { // this means that if its been one second or not then duly updates the counter
                 timer+=1000;
 
-                System.out.println(updates + "updates, " + frames + "fps");
+                //System.out.println(updates + "updates, " + frames + "fps");
                 frame.setTitle(title + "| ups " + updates + " and fps " + frames);
 
                 frames = 0;
@@ -110,16 +110,16 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     public void update() {
         key.update();
         if(key.up) {
-            y-=5;
-        }
-        if(key.down) {
             y+=5;
         }
+        if(key.down) {
+            y-=5;
+        }
         if(key.right) {
-            x+=5;
+            x-=5;
         }
         if(key.left) {
-            x-=5;
+            x+=5;
         }
 
 
