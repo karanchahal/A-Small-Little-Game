@@ -17,7 +17,7 @@ public class Keyboard implements KeyListener {
         down = keys[KeyEvent.VK_DOWN] || keys[KeyEvent.VK_S];
         right = keys[KeyEvent.VK_RIGHT] || keys[KeyEvent.VK_D];
         left = keys[KeyEvent.VK_LEFT] || keys[KeyEvent.VK_A];
-        
+
 
     }
 

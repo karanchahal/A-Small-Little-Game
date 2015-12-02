@@ -1,5 +1,7 @@
 package com.karan.rain.graphics;
 
+import com.karan.rain.level.tile.Tile;
+
 import java.util.Random;
 
 /**
@@ -52,4 +54,53 @@ public class Screen {
             }
         }
     }
+
+
+    //remaking the RENDER METHOD
+    /*
+    * Dealing with offsets
+    * if player moves right then screen offsets to the left
+    * so we need to figure shit out
+    * Absolute values and Relative Values for Tiles
+    *    Absolute values : Is with respect to entire screen
+    *    Relative Values: Is with respect to other tiles
+    *
+    * */
+
+
+    public void renderTile(int xp,int yp,Tile tile) {
+        for(int y =0;y < tile.sprite.SIZE;y++) {
+            int ya = y+ yp;
+            for(int x =0;x<tile.sprite.SIZE;x++)
+            {
+                int xa =x+xp;
+                if(xa < 0 || xa >= width || ya <0 || ya >= width ) break; // screen width
+                //here we're stopping rendering when map is out of the screen , so we don't render the WHOLE map.
+                pixels[xa + ya*width] = tile.sprite.pixels[x + y*tile.sprite.SIZE]; //NOT DEALING WITH OFFSETS HERE just rendering at x and y
+
+
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
