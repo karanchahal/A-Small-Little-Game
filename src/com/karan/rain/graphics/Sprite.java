@@ -16,6 +16,7 @@ public class Sprite {
 
     // Here is a SAMPLE Sprite Object
     public static Sprite grass = new Sprite(16,0,0,SpriteSheet.tiles);
+    public static Sprite voidTile = new Sprite(16,0);
 
 
 
@@ -30,6 +31,20 @@ public class Sprite {
 
         load();
     }
+
+    public Sprite(int size,int colour) {
+        SIZE = size;
+        pixels = new int[SIZE*SIZE];
+        loadSprite(colour);
+    }
+
+    private void loadSprite(int colour) {
+        for(int i=0;i<pixels.length;i++)
+        {
+            pixels[i] = colour;
+        }
+    }
+
 
     private void load() {
         for(int y=0;y<SIZE;y++) {

@@ -1,6 +1,8 @@
 package com.karan.rain.level;
 
 import com.karan.rain.graphics.Screen;
+import com.karan.rain.level.tile.GrassTile;
+import com.karan.rain.level.tile.Tile;
 
 /**
  * Created by user on 02/12/2015.
@@ -43,10 +45,31 @@ public class Level {
     }
 
     public void render(int xScroll,int yScroll,Screen screen) {
+
+        //SPECIFIES WHAT TILES WE NEED TO COLLECT
+        //CORNER PINS(WHAT AREA OF THE MAP WE WANT TO RENDER)
+
         /* xScroll and yScroll indicates where the user's scroll or cursor is at some point*/
-
-
+        int x0 = xScroll >> 4; //shifted right by 4 to mean divided by 16
+        //Jumping to tile precision from pixel precision
+        int x1 = (xScroll + screen.width) >> 4; //end render region x point
+        int y0 = yScroll >> 4;//bottom y asomtote
+        int y1 = (yScroll + screen.height)>> 4; // end render y region y position
 
 
     }
+
+
+    public Tile getTile(int x,int y) // We need to get a tile to use for our randomly rendered level
+    {
+        if(tiles[x +y*width] == 0)
+        {
+          return Tile.grass;
+
+        }
+
+        return Tile.voidTile;
+
+    }
+
 }

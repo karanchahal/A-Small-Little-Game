@@ -20,7 +20,8 @@ public class Tile {
     public Sprite sprite;
 
     //EACH TILE SHOULD HAVE A SPRITE
-
+    public static Tile grass = new GrassTile(Sprite.grass);
+    public static Tile voidTile = new VoidTile(Sprite.voidTile);
 
     public Tile(Sprite sprite) { //not a default constructor
         this.sprite =sprite;
