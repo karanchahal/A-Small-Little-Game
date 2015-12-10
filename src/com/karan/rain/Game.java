@@ -1,6 +1,7 @@
 package com.karan.rain;
 
 import com.karan.rain.graphics.Screen;
+import com.karan.rain.graphics.entity.mob.Player;
 import com.karan.rain.input.Keyboard;
 import com.karan.rain.level.Level;
 import com.karan.rain.level.RandomLevel;
@@ -28,7 +29,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     private JFrame frame;
     private Level level; //inist level object
     public boolean running = false;
-    int x =0,y= 0;
+    private Player player;
 
     private Screen screen;
 
@@ -47,7 +48,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         key = new Keyboard();
 
         level = new RandomLevel(64,64); //instantiating random level
-
+        player  = new Player(key);
         frame.addKeyListener(key);
 
     }
@@ -114,18 +115,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
 
     public void update() {
         key.update();
-        if(key.up) {
-            y-=5;
-        }
-        if(key.down) {
-            y+=5;
-        }
-        if(key.right) {
-            x+=5;
-        }
-        if(key.left) {
-            x-=5;
-        }
+        player.update();
 
 
     }
@@ -137,7 +127,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         }
 
         screen.clear(); // clear shte screen before printing new frame
-        level.render(x,y,screen);
+        level.render(player.x,player.y,screen);
 
 
         for(int i=0;i< pixels.length;i++) {
@@ -151,6 +141,9 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         */
         g.drawImage(image,0,0,getWidth(),getHeight(),null); // draws image object wihich is buffered image
 
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Verdana",0,50));
+        g.drawString("X: "+ player.x +", Y : "+ player.y,450,400);
         g.dispose(); // clears everything
 
         bs.show();

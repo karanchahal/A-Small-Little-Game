@@ -14,7 +14,20 @@ public abstract class Mob extends Entity {
     protected boolean moving = false;
 
 
-    public void move() {
+    public void move(int xa,int ya) {
+        // going to control how pixels are translated on the screen
+        // the x and y int control the location of our entity on our map
+        // x and  y need to change for the item to move
+
+        if(xa > 0) dir = 1;
+        if(xa < 0) dir = 3;
+        if(ya > 0) dir = 3;
+        if(ya < 0) dir = 0;
+
+        if(!collision()) {
+            x += xa;
+            y += ya;
+        }
 
     }
 
@@ -26,4 +39,7 @@ public abstract class Mob extends Entity {
         return false;
     }
 
+    public void render() {
+
+    }
 }
