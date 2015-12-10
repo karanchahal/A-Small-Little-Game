@@ -16,7 +16,7 @@ public class Sprite {
 
     // Here is a SAMPLE Sprite Object
     public static Sprite grass = new Sprite(16,0,0,SpriteSheet.tiles);
-    public static Sprite voidTile = new Sprite(16,0);
+    public static Sprite voidSprite = new Sprite(16,0x1B87E0); // sets size and colour which is black
 
 
 
@@ -35,10 +35,10 @@ public class Sprite {
     public Sprite(int size,int colour) {
         SIZE = size;
         pixels = new int[SIZE*SIZE];
-        loadSprite(colour);
+        setColour(colour);
     }
 
-    private void loadSprite(int colour) {
+    private void setColour(int colour) {
         for(int i=0;i<pixels.length;i++)
         {
             pixels[i] = colour;

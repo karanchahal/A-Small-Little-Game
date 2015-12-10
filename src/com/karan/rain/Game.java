@@ -2,6 +2,8 @@ package com.karan.rain;
 
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.input.Keyboard;
+import com.karan.rain.level.Level;
+import com.karan.rain.level.RandomLevel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,6 +26,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     public static String title = "Rain"; //  soft coding the title
     private Thread thread;
     private JFrame frame;
+    private Level level; //inist level object
     public boolean running = false;
     int x =0,y= 0;
 
@@ -42,6 +45,8 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         frame = new JFrame();
         screen =  new Screen(width,height);
         key = new Keyboard();
+
+        level = new RandomLevel(64,64); //instantiating random level
 
         frame.addKeyListener(key);
 
@@ -110,16 +115,16 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     public void update() {
         key.update();
         if(key.up) {
-            y+=5;
-        }
-        if(key.down) {
             y-=5;
         }
+        if(key.down) {
+            y+=5;
+        }
         if(key.right) {
-            x-=5;
+            x+=5;
         }
         if(key.left) {
-            x+=5;
+            x-=5;
         }
 
 
@@ -132,8 +137,8 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         }
 
         screen.clear(); // clear shte screen before printing new frame
+        level.render(x,y,screen);
 
-        screen.render(x,y);
 
         for(int i=0;i< pixels.length;i++) {
             pixels[i] = screen.pixels[i]; // converts screen pixel array to display pixel array

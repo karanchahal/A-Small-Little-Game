@@ -19,7 +19,7 @@ public class VoidTile extends Tile {
         What are x and y ,they are in pixel format
         they have to calculated into tile positions
          */
-        screen.renderTile(x, y, this);
+        screen.renderTile(x << 4, y << 4 , this);
 
     }
 }

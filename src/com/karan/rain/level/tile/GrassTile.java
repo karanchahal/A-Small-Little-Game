@@ -19,10 +19,11 @@ public class GrassTile extends Tile{
     public void render(int x,int y,Screen screen) {
         // Do render stuff here !
         /*
-        What are x and y ,they are in pixel format
-        they have to calculated into tile positions
+        What are x and y ,they are in tile format
+        they have to calculated into pixel positions!
+        so multiply by 16
          */
-        screen.renderTile(x,y,this);
+        screen.renderTile(x << 4,y << 4,this);
 
     }
 
