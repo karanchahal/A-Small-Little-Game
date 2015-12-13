@@ -127,7 +127,10 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         }
 
         screen.clear(); // clear shte screen before printing new frame
-        level.render(player.x,player.y,screen);
+        int xScroll = player.x - screen.width/2;
+        int yScroll = player.y - screen.height/2;
+        level.render(xScroll,yScroll,screen);
+        player.render(screen);
 
 
         for(int i=0;i< pixels.length;i++) {
@@ -139,11 +142,14 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         /*g.setColor(new Color(80,40,100));
         g.fillRect(0, 0, getWidth(), getHeight()); // background colour code
         */
-        g.drawImage(image,0,0,getWidth(),getHeight(),null); // draws image object wihich is buffered image
+
+        g.drawImage(image,0,0,getWidth(),getHeight(),null); // draws image object which is buffered image
 
         g.setColor(Color.WHITE);
         g.setFont(new Font("Verdana",0,50));
-        g.drawString("X: "+ player.x +", Y : "+ player.y,450,400);
+
+        //g.drawString("X: "+ player.x +", Y : "+ player.y,450,400);
+
         g.dispose(); // clears everything
 
         bs.show();

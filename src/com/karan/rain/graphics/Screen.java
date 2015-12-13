@@ -1,5 +1,6 @@
 package com.karan.rain.graphics;
 
+import com.karan.rain.graphics.entity.mob.Player;
 import com.karan.rain.level.tile.Tile;
 
 import java.util.Random;
@@ -73,6 +74,31 @@ public class Screen {
             }
         }
     }
+
+    public void renderPlayer(int xp,int yp,Sprite sprite)
+    {
+        xp -= xOffset;
+        yp -= yOffset;
+
+        for(int y =0;y <16;y++) {
+            int ya = y+ yp; //position of the tile .
+            for(int x =0;x<16;x++)
+            {
+                int xa =x+xp;
+                if(xa < -16 || xa >= width || ya <0 || ya >= height ) break; // screen width
+                //here we're stopping rendering when map is out of the screen , so we don't render the WHOLE map.
+                if(xa < 0 ) xa = 0;
+
+                int color = sprite.pixels[x+y*16];
+
+                if(color != 0xFFFF00FF)
+                pixels[xa + ya*width] = color;
+
+            }
+        }
+    }
+
+
 
 
     public void setOffset(int xOffset,int yOffset) {
