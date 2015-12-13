@@ -75,21 +75,31 @@ public class Screen {
         }
     }
 
-    public void renderPlayer(int xp,int yp,Sprite sprite)
+    public void renderPlayer(int xp,int yp,Sprite sprite,int flip)
     {
         xp -= xOffset;
         yp -= yOffset;
 
         for(int y =0;y <sprite.SIZE;y++) {
             int ya = y+ yp; //position of the tile .
+            int ys = y;
+            if(flip == 2 || flip == 3) {
+                ys = 31 - y;
+            }
             for(int x =0;x<sprite.SIZE;x++)
             {
                 int xa =x+xp;
+                int xs = x;
+
+                if(flip == 1 || flip == 3) {
+                    xs = 31 - x;
+                }
+
                 if(xa < -sprite.SIZE || xa >= width || ya <0 || ya >= height ) break; // screen width
                 //here we're stopping rendering when map is out of the screen , so we don't render the WHOLE map.
                 if(xa < 0 ) xa = 0;
 
-                int color = sprite.pixels[x+y*sprite.SIZE];
+                int color = sprite.pixels[xs+ys*sprite.SIZE];
 
                 if(color != 0xFFFF00FF)
                 pixels[xa + ya*width] = color;
