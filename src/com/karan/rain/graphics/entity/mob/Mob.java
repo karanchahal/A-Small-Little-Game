@@ -20,7 +20,7 @@ public abstract class Mob extends Entity {
         // x and  y need to change for the item to move
 
         if(xa > 0) dir = 1;
-        if(xa < 0) dir = 3;
+        if(xa < 0) dir = 2;
         if(ya > 0) dir = 3;
         if(ya < 0) dir = 0;
 

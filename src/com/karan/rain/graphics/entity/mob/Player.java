@@ -1,6 +1,7 @@
 package com.karan.rain.graphics.entity.mob;
 
 import com.karan.rain.graphics.Screen;
+import com.karan.rain.graphics.Sprite;
 import com.karan.rain.input.Keyboard;
 
 /**
@@ -9,14 +10,17 @@ import com.karan.rain.input.Keyboard;
 public class Player extends Mob{
 
     private Keyboard input;
+    private Sprite sprite;
 
     public Player(Keyboard input) {
         this.input = input;
+        sprite = Sprite.player_forward;
     }
 
     public Player(int x,int y,Keyboard input) {
         this.x = x;
         this.y = y;
+        sprite = Sprite.player_forward;
         this.input = input;
     }
 
@@ -37,7 +41,12 @@ public class Player extends Mob{
     public void render(Screen screen) {
 
 
-        screen.renderPlayer(x - 16,y -16,sprite.player);
+        if(dir == 0) sprite = sprite.player_forward;
+        if(dir == 1) sprite = sprite.player_right;
+        if(dir == 2) sprite = sprite.player_left;
+        if(dir == 3) sprite = sprite.player_back;
+
+        screen.renderPlayer(x - 16,y -16,sprite);
 
     }
 
