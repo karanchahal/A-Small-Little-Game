@@ -116,9 +116,9 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     public void update() {
         key.update();
         player.update();
-
-
     }
+
+
     public void render() {
         BufferStrategy bs = getBufferStrategy(); // our buffer strategy creates 3 buffers
         if(bs == null) {

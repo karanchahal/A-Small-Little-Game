@@ -11,7 +11,8 @@ public class Player extends Mob{
 
     private Keyboard input;
     private Sprite sprite;
-
+    private int anime;
+    private boolean walking = false;
     public Player(Keyboard input) {
         this.input = input;
         sprite = Sprite.player_forward;
@@ -27,14 +28,19 @@ public class Player extends Mob{
     public void update() {
      //we want the player to move when we press keyboard button
 
-       int xa =0,ya =0;
-
+        int xa =0,ya =0;
+        if(anime < 7500) anime++; else anime =0;
         if(input.up) ya-=5;
         if(input.down) ya+=5;
         if(input.left) xa-=5;
         if(input.right) xa+=5;
 
-        if(xa != 0 || ya != 0) move(xa,ya);
+        if(xa != 0 || ya != 0) {
+            move(xa,ya);
+            walking = true;
+        } else {
+            walking = false;
+        }
 
     }
 
@@ -42,10 +48,64 @@ public class Player extends Mob{
 
         int flip = 0;
 
-        if(dir == 0) sprite = sprite.player_forward;
-        if(dir == 1) sprite = sprite.player_side;
-        if(dir == 2) {sprite = sprite.player_side;flip = 1;}
-        if(dir == 3) sprite = sprite.player_back;
+        if(dir == 0) {
+            sprite = sprite.player_forward;
+            if(walking) {
+                if(anime %20 > 10)
+                {
+                    sprite = sprite.player_forward_1;
+                }
+                else
+                {
+                    sprite = sprite.player_forward_2;
+                }
+
+            }
+        }
+        if(dir == 1) {
+            sprite = sprite.player_side;
+
+            if(walking) {
+                if(anime %20 > 10)
+                {
+                    sprite = sprite.player_side_1;
+                }
+                else
+                {
+                    sprite = sprite.player_side_2;
+                }
+
+            }
+
+
+
+
+        }
+        if(dir == 2) {
+            sprite = sprite.player_side;flip = 1;
+
+            if(walking) {
+                if(anime %20 > 10)
+                {
+                    sprite = sprite.player_side_1;
+                }
+                else
+                {
+                    sprite = sprite.player_side_2;
+                }
+
+            }
+        }
+        if(dir == 3) {
+            sprite = sprite.player_back;
+            if(walking) {
+                if (anime % 20 > 10) {
+                    sprite = sprite.player_back_1;
+                } else {
+                    sprite = sprite.player_back_2;
+                }
+            }
+        }
 
 
         screen.renderPlayer(x - 16,y -16,sprite,flip);
