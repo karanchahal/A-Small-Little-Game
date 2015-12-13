@@ -80,16 +80,16 @@ public class Screen {
         xp -= xOffset;
         yp -= yOffset;
 
-        for(int y =0;y <16;y++) {
+        for(int y =0;y <sprite.SIZE;y++) {
             int ya = y+ yp; //position of the tile .
-            for(int x =0;x<16;x++)
+            for(int x =0;x<sprite.SIZE;x++)
             {
                 int xa =x+xp;
-                if(xa < -16 || xa >= width || ya <0 || ya >= height ) break; // screen width
+                if(xa < -sprite.SIZE || xa >= width || ya <0 || ya >= height ) break; // screen width
                 //here we're stopping rendering when map is out of the screen , so we don't render the WHOLE map.
                 if(xa < 0 ) xa = 0;
 
-                int color = sprite.pixels[x+y*16];
+                int color = sprite.pixels[x+y*sprite.SIZE];
 
                 if(color != 0xFFFF00FF)
                 pixels[xa + ya*width] = color;
