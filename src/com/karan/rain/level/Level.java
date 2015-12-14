@@ -33,7 +33,7 @@ public class Level {
 
     }
 
-    private void loadLevel(String path) { //loads width and height
+    protected void loadLevel(String path) { //loads width and height
 
     }
 
@@ -69,8 +69,7 @@ public class Level {
     }
 
 
-    public Tile getTile(int x,int y) // We need to get a tile to use for our randomly rendered level
-    {
+    public Tile getTile(int x,int y) { // We need to get a tile to use for our randomly rendered level
         if(x < 0 || y < 0  || x >= width || y >= height) return Tile.voidTile;
 
         if(tiles[x + y*width] == 0)
