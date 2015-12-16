@@ -16,16 +16,17 @@ public class Level {
 
 
     protected int width,height;
-    protected int[] tilesInt; //tile ids, what index does a tile start
+    public int[] tiles; //tile ids, what index does a tile start
 
     public Level(int width,int height){ // generates a random level
         this.width =width;
         this.height =height;
-        tilesInt = new int[width*height];
+        tiles = new int[width*height];
         generateLevel(); //generates random level a tile for every square unit
     }
 
     public Level(String path) { // if we want to load a level from the path
+
         loadLevel(path); //to read width and height of the level image in path
         generateLevel(); //generates random level a tile for every square unit
 
@@ -62,7 +63,10 @@ public class Level {
 
         for(int y = y0;y < y1;y++) {
             for(int x = x0;x < x1;x++) {
+
                 getTile(x,y).render(x,y,screen);
+
+
             }
         }
 
@@ -72,21 +76,22 @@ public class Level {
 
 
     public Tile getTile(int x,int y) { // We need to get a tile to use for our randomly rendered level
-        if(x < 0 || y < 0  || x >= width || y >= height) return Tile.voidTile;
 
-        if(tilesInt[x + y*width] == 0)
+        if(x < 0 || y < 0 || x >= width || y >= height) return Tile.voidTile;
+
+        if(tiles[x + y*width] == 0 )
         {
           return Tile.grass;
 
         }
 
-        if(tilesInt[x + y*width] == 1)
+        if(tiles[x + y*width] == 1)
         {
             return Tile.flower;
 
         }
 
-        if(tilesInt[x + y*width] == 2)
+        if(tiles[x + y*width] == 2)
         {
             return Tile.rock;
 
