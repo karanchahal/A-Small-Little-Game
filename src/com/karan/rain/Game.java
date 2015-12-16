@@ -5,6 +5,7 @@ import com.karan.rain.graphics.entity.mob.Player;
 import com.karan.rain.input.Keyboard;
 import com.karan.rain.level.Level;
 import com.karan.rain.level.RandomLevel;
+import com.karan.rain.level.SpawnLevel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -47,7 +48,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         screen =  new Screen(width,height);
         key = new Keyboard();
 
-        level = new RandomLevel(64,64); //instantiating random level
+        level = new SpawnLevel("/textures/level.png"); //instantiating random level
         player  = new Player(key);
         frame.addKeyListener(key);
 

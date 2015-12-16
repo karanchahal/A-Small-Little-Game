@@ -14,18 +14,20 @@ import com.karan.rain.level.tile.Tile;
 
 public class Level {
 
+
     protected int width,height;
-    protected int[] tiles; //tile ids, what index does a tile start
+    protected int[] tilesInt; //tile ids, what index does a tile start
 
     public Level(int width,int height){ // generates a random level
         this.width =width;
         this.height =height;
-        tiles = new int[width*height];
+        tilesInt = new int[width*height];
         generateLevel(); //generates random level a tile for every square unit
     }
 
     public Level(String path) { // if we want to load a level from the path
         loadLevel(path); //to read width and height of the level image in path
+        generateLevel(); //generates random level a tile for every square unit
 
     }
     protected void generateLevel() {
@@ -72,19 +74,19 @@ public class Level {
     public Tile getTile(int x,int y) { // We need to get a tile to use for our randomly rendered level
         if(x < 0 || y < 0  || x >= width || y >= height) return Tile.voidTile;
 
-        if(tiles[x + y*width] == 0)
+        if(tilesInt[x + y*width] == 0)
         {
           return Tile.grass;
 
         }
 
-        if(tiles[x + y*width] == 1)
+        if(tilesInt[x + y*width] == 1)
         {
             return Tile.flower;
 
         }
 
-        if(tiles[x + y*width] == 2)
+        if(tilesInt[x + y*width] == 2)
         {
             return Tile.rock;
 
