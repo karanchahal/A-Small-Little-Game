@@ -46,8 +46,6 @@ public class SpawnLevel extends Level {
 
              if(tiles[i] == 0xFF00FF21) {
                 tiles[i] = 0;
-                 System.out.print("hey");
-
              }
             else
             if(tiles[i] == 0xFFFFD800) {
@@ -57,8 +55,6 @@ public class SpawnLevel extends Level {
             if(tiles[i] == 0xFF7F3300) {
                 tiles[i] = 2;
             }
-            //System.out.print("hey");
-
 
 
         }

@@ -2,6 +2,7 @@ package com.karan.rain.level.tile;
 
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.graphics.Sprite;
+import com.karan.rain.level.tile.spawn_level.*;
 
 /**
  * Created by user on 02/12/2015.
@@ -24,6 +25,14 @@ public class Tile {
     public static Tile flower = new FlowerTile(Sprite.flower);
     public static Tile rock = new RockTile(Sprite.rock);
     public static Tile voidTile = new VoidTile(Sprite.voidSprite);
+
+    // Spawn Level Tiles
+    public static Tile spawn_grass = new SpawnGrassTile(Sprite.spawn_grass);
+    public static Tile spawn_hedge = new SpawnHedgeTile(Sprite.spawn_hedge);
+    public static Tile spawn_floor = new SpawnFloorTile(Sprite.spawn_floor);
+    public static Tile spawn_water = new SpawnWaterTile(Sprite.spawn_water);
+    public static Tile spawn_wall1 = new SpawnWall(Sprite.spawn_wall1);
+    public static Tile spawn_wall2 = new SpawnWall(Sprite.spawn_wall2);
 
     public Tile(Sprite sprite) { //not a default constructor
         this.sprite =sprite;
