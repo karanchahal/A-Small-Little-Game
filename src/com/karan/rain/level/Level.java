@@ -17,7 +17,7 @@ public class Level {
 
     protected int width,height;
     public int[] tiles; //tile ids, what index does a tile start
-    public static Level spawn  = new Level("/textures/levels/spawn.png");
+    public static Level spawn  = new SpawnLevel("/textures/levels/spawn.png");
 
     public Level(int width,int height){ // generates a random level
         this.width =width;

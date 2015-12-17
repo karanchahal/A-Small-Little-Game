@@ -6,6 +6,7 @@ import com.karan.rain.input.Keyboard;
 import com.karan.rain.level.Level;
 import com.karan.rain.level.RandomLevel;
 import com.karan.rain.level.SpawnLevel;
+import com.karan.rain.level.tile.TileCoordinate;
 
 import javax.swing.*;
 import java.awt.*;
@@ -48,8 +49,9 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         screen =  new Screen(width,height);
         key = new Keyboard();
 
-        level = new SpawnLevel("/textures/levels/spawn.png"); //instantiating random level
-        player  = new Player(16*8,16*8,key);
+        level = Level.spawn; //instantiating random level
+        TileCoordinate playerSpawn = new TileCoordinate(19,62);
+        player  = new Player(playerSpawn.x(),playerSpawn.y(),key);
         frame.addKeyListener(key);
 
     }
