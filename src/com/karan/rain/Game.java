@@ -50,8 +50,9 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         key = new Keyboard();
 
         level = Level.spawn; //instantiating random level
-        TileCoordinate playerSpawn = new TileCoordinate(19,62);
+        TileCoordinate playerSpawn = new TileCoordinate(19,65);
         player  = new Player(playerSpawn.x(),playerSpawn.y(),key);
+        player.init(level);
         frame.addKeyListener(key);
 
     }
