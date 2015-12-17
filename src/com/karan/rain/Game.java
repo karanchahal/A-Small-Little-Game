@@ -48,7 +48,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         screen =  new Screen(width,height);
         key = new Keyboard();
 
-        level = new SpawnLevel("/textures/levels/level.png"); //instantiating random level
+        level = new SpawnLevel("/textures/levels/spawn.png"); //instantiating random level
         player  = new Player(16*8,16*8,key);
         frame.addKeyListener(key);
 

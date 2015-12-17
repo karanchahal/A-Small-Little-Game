@@ -42,22 +42,7 @@ public class SpawnLevel extends Level {
     //Rock = 0x7F3300
     protected void generateLevel() {
 
-        for(int i = 0;i < tiles.length;i++) {
 
-             if(tiles[i] == 0xFF00FF21) {
-                tiles[i] = 0;
-             }
-            else
-            if(tiles[i] == 0xFFFFD800) {
-                tiles[i] = 1;
-            }
-            else
-            if(tiles[i] == 0xFF7F3300) {
-                tiles[i] = 2;
-            }
-
-
-        }
 
     }
 

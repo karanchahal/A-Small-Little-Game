@@ -17,6 +17,7 @@ public class Level {
 
     protected int width,height;
     public int[] tiles; //tile ids, what index does a tile start
+    public static Level spawn  = new Level("/textures/levels/spawn.png");
 
     public Level(int width,int height){ // generates a random level
         this.width =width;
@@ -79,21 +80,33 @@ public class Level {
 
         if(x < 0 || y < 0 || x >= width || y >= height) return Tile.voidTile;
 
-        if(tiles[x + y*width] == 0 )
+        if(tiles[x + y*width] == 0  || tiles[x + y*width] == Tile.col_spawn_grass)
         {
-          return Tile.grass;
+          return Tile.spawn_grass;
 
         }
 
-        if(tiles[x + y*width] == 1)
+        if(tiles[x + y*width] == 1 || tiles[x + y*width] == Tile.col_spawn_floor)
         {
-            return Tile.flower;
+            return Tile.spawn_floor;
 
         }
 
-        if(tiles[x + y*width] == 2)
+        if(tiles[x + y*width] == 2 || tiles[x + y*width] == Tile.col_spawn_water)
         {
-            return Tile.rock;
+            return Tile.spawn_water;
+
+        }
+
+        if(tiles[x + y*width] == 3 || tiles[x + y*width] == Tile.col_spawn_wall1)
+        {
+            return Tile.spawn_wall1;
+
+        }
+
+        if(tiles[x + y*width] == 4 || tiles[x + y*width] == Tile.col_spawn_wall2)
+        {
+            return Tile.spawn_wall2;
 
         }
 
