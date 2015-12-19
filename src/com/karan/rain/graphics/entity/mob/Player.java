@@ -3,6 +3,7 @@ package com.karan.rain.graphics.entity.mob;
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.graphics.Sprite;
 import com.karan.rain.input.Keyboard;
+import com.karan.rain.input.Mouse;
 
 /**
  * Created by Lenovo on 12/10/2015.
@@ -34,7 +35,6 @@ public class Player extends Mob{
         if(input.down) ya+=5;
         if(input.left) xa-=5;
         if(input.right) xa+=5;
-
         if(xa != 0 || ya != 0) {
             move(xa,ya);
             walking = true;
@@ -42,6 +42,18 @@ public class Player extends Mob{
             walking = false;
         }
 
+
+        updateShooting();
+    }
+
+    private void updateShooting() {
+
+        if(Mouse.getButton() == 1) {
+            double dx = Math.abs(Mouse.getX() - 300/2);
+            double dy = Math.abs(Mouse.getY() - 168/2);
+            double dir = Math.atan2(dy,dx);
+            shoot(x,y,dir);
+        }
     }
 
     public void render(Screen screen) {

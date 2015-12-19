@@ -38,10 +38,22 @@ public abstract class Mob extends Entity {
 
     }
 
+    protected void shoot(int x,int y,double direction) {
+      System.out.println("Angle: "+ direction);
+    }
+
     private boolean collision(int xa,int ya) {
         boolean solid =  false;
-        if(level.getTile((x+xa)/16,(y+ya)/16).solid())
-            solid = true;
+
+        for (int i=0;i<4;i++) {
+            int xt  = ((x + xa) + i%2*14 - 7)/16; // Pixel perfect collision detection
+            int yt  = ((y + ya) + i/2*12 + 3)/16;;
+
+            if(level.getTile(xt,yt).solid())
+                solid = true;
+        }
+
+
         return solid;
     }
 

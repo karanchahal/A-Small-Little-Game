@@ -3,6 +3,7 @@ package com.karan.rain;
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.graphics.entity.mob.Player;
 import com.karan.rain.input.Keyboard;
+import com.karan.rain.input.Mouse;
 import com.karan.rain.level.Level;
 import com.karan.rain.level.RandomLevel;
 import com.karan.rain.level.SpawnLevel;
@@ -54,6 +55,10 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         player  = new Player(playerSpawn.x(),playerSpawn.y(),key);
         player.init(level);
         frame.addKeyListener(key);
+
+        Mouse mouse = new Mouse();
+        addMouseListener(mouse);
+        addMouseMotionListener(mouse);
 
     }
 
@@ -151,8 +156,8 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
 
         g.setColor(Color.WHITE);
         g.setFont(new Font("Verdana",0,50));
-
-        //g.drawString("X: "+ player.x +", Y : "+ player.y,450,400);
+        //g.fillRect(Mouse.getX(),Mouse.getY(),64,64);
+        //g.drawString("Button:" + Mouse.getButton(),80,80);
 
         g.dispose(); // clears everything
 
