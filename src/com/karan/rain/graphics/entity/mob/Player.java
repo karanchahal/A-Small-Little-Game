@@ -43,8 +43,11 @@ public class Player extends Mob{
             walking = false;
         }
 
-
+        clear();
         updateShooting();
+    }
+
+    private void clear() {
     }
 
     private void updateShooting() {

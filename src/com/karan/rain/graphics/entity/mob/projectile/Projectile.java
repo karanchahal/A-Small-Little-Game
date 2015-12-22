@@ -10,7 +10,9 @@ public class Projectile extends Entity {
 
     protected final int xOrigin,yOrigin;
     protected double angle;
+    protected double x,y;
     protected Sprite sprite;
+    protected double distance;
     protected double nx,ny; // new x and new y will change every update
     protected double speed, rateOfFire,range,damage;
 

@@ -49,7 +49,12 @@ public class Level {
 
     public void update() { //updates our level ,artificial intel (bots) or entities that need to be updated .Need to happen at 60 FPS
         for(int i=0;i < entites.size();i++) {
+            if(entites.get(i).distance() <= 100)
             entites.get(i).update();
+            else
+            {
+                entites.remove(i);
+            }
         }
     }
     private void time() {

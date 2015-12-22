@@ -28,9 +28,16 @@ public class WizardProjectile extends Projectile {
     protected void move() {
         x += nx;
         y += ny;
+        System.out.println("Distance: " + distance());
+    }
+
+    public int distance() {
+        double dist = 0;
+        dist = Math.sqrt((xOrigin - x)*(xOrigin - x) + (yOrigin - y)*(yOrigin - y));
+        return (int)dist;
     }
 
     public void render(Screen screen) {
-        screen.renderProjectile(x,y,sprite);
+        screen.renderProjectile((int)x-12,(int)y-2,sprite);
     }
 }

@@ -35,7 +35,9 @@ public abstract class Entity {
         this.level = level;
     }
 
-
+    public int distance() {
+        return 1;
+    }
 
 
 }
