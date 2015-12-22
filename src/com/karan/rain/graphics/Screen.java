@@ -75,7 +75,7 @@ public class Screen {
         }
     }
 
-    public void renderTile(int xp,int yp,Sprite sprite) {
+    public void renderProjectile(int xp,int yp,Sprite sprite) {
 
         xp -= xOffset;
         yp -= yOffset;
@@ -88,6 +88,7 @@ public class Screen {
                 if(xa < -sprite.SIZE || xa >= width || ya <0 || ya >= height ) break; // screen width
                 //here we're stopping rendering when map is out of the screen , so we don't render the WHOLE map.
                 if(xa < 0 ) xa = 0;
+                if(sprite.pixels[x + y*sprite.SIZE] != 0xffFF00DC)
                 pixels[xa + ya*width] = sprite.pixels[x + y*sprite.SIZE]; //NOT DEALING WITH OFFSETS HERE just rendering at x and y
 
 

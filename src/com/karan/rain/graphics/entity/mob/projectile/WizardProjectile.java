@@ -13,7 +13,8 @@ public class WizardProjectile extends Projectile {
         damage = 20;
         speed = 4;
         rateOfFire = 15;
-        sprite = Sprite.grass;
+        sprite = Sprite.projectile_wizard;
+        sprite = Sprite.projectile_wizard;
         //Vector Maths..
         nx = speed * Math.cos(angle);
         ny = speed * Math.sin(angle);
@@ -30,6 +31,6 @@ public class WizardProjectile extends Projectile {
     }
 
     public void render(Screen screen) {
-        screen.renderTile(x,y,sprite);
+        screen.renderProjectile(x,y,sprite);
     }
 }
