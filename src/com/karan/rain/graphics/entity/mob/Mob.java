@@ -2,6 +2,11 @@ package com.karan.rain.graphics.entity.mob;
 
 import com.karan.rain.graphics.Sprite;
 import com.karan.rain.graphics.entity.Entity;
+import com.karan.rain.graphics.entity.mob.projectile.Projectile;
+import com.karan.rain.graphics.entity.mob.projectile.WizardProjectile;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Lenovo on 12/9/2015.
@@ -13,6 +18,7 @@ public abstract class Mob extends Entity {
     protected int dir = 0; // direction of the MOB (north,south,east west)
     protected boolean moving = false;
 
+    protected List<Projectile> projectiles = new ArrayList<Projectile>();
 
     public void move(int xa,int ya) {
         // going to control how pixels are translated on the screen
@@ -39,7 +45,13 @@ public abstract class Mob extends Entity {
     }
 
     protected void shoot(int x,int y,double direction) {
-      System.out.println("Angle: "+ direction);
+        //direction *= 180/Math.PI;
+        //System.out.println("Angle: "+ direction);
+        Projectile p = new WizardProjectile(x,y,direction);
+        projectiles.add(p);
+        level.add(p);
+
+
     }
 
     private boolean collision(int xa,int ya) {

@@ -1,8 +1,12 @@
 package com.karan.rain.level;
 
 import com.karan.rain.graphics.Screen;
+import com.karan.rain.graphics.entity.Entity;
 import com.karan.rain.level.tile.GrassTile;
 import com.karan.rain.level.tile.Tile;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by user on 02/12/2015.
@@ -18,6 +22,8 @@ public class Level {
     protected int width,height;
     public int[] tiles; //tile ids, what index does a tile start
     public static Level spawn  = new SpawnLevel("/textures/levels/spawn.png");
+
+    private List<Entity> entites = new ArrayList<Entity>();
 
     public Level(int width,int height){ // generates a random level
         this.width =width;
@@ -42,7 +48,9 @@ public class Level {
     }
 
     public void update() { //updates our level ,artificial intel (bots) or entities that need to be updated .Need to happen at 60 FPS
-
+        for(int i=0;i < entites.size();i++) {
+            entites.get(i).update();
+        }
     }
     private void time() {
 
@@ -71,8 +79,16 @@ public class Level {
             }
         }
 
+        for(int i=0;i< entites.size();i++) {
+            entites.get(i).render(screen);
+        }
 
 
+
+    }
+
+    public void add(Entity e) {
+        entites.add(e);
     }
 
 

@@ -1,5 +1,6 @@
 package com.karan.rain.graphics.entity.mob;
 
+import com.karan.rain.Game;
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.graphics.Sprite;
 import com.karan.rain.input.Keyboard;
@@ -49,8 +50,8 @@ public class Player extends Mob{
     private void updateShooting() {
 
         if(Mouse.getButton() == 1) {
-            double dx = Math.abs(Mouse.getX() - 300/2);
-            double dy = Math.abs(Mouse.getY() - 168/2);
+            double dx = (Mouse.getX() - (Game.windowWidth() / 2));
+            double dy = (Mouse.getY() - (Game.windowHeight() / 2));
             double dir = Math.atan2(dy,dx);
             shoot(x,y,dir);
         }

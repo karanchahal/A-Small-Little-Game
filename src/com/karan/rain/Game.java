@@ -24,9 +24,9 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     //as we extend canvas we should serialize the class
     private static final long serialVersionUID =1L;
     private Keyboard key; // adds key input object
-    public static int width = 300;
-    public static int height = width / 16*9;
-    public static int scale = 3;
+    private static int width = 300;
+    private static int height = width / 16*9;
+    private static int scale = 3;
     public static String title = "Rain"; //  soft coding the title
     private Thread thread;
     private JFrame frame;
@@ -55,10 +55,10 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         player  = new Player(playerSpawn.x(),playerSpawn.y(),key);
         player.init(level);
         frame.addKeyListener(key);
-
         Mouse mouse = new Mouse();
         addMouseListener(mouse);
         addMouseMotionListener(mouse);
+
 
     }
 
@@ -77,6 +77,16 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static int windowWidth()
+    {
+        return width*scale;
+    }
+
+    public static int windowHeight()
+    {
+        return height*scale;
     }
 
     public void run() {
@@ -125,6 +135,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
     public void update() {
         key.update();
         player.update();
+        level.update();
     }
 
 

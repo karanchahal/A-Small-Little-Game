@@ -2,14 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea9f6bf3-73b4-4835-806b-529e0a328469" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/input/Mouse.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/karan/rain/input/Mouse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/graphics/entity/mob/projectile/Projectile.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/graphics/entity/mob/projectile/WizardProjectile.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/projectile/Projectile.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/projectile/WizardProjectile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/Game.class" afterPath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/Game.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/graphics/Screen.class" afterPath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/graphics/Screen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/graphics/entity/mob/Mob.class" afterPath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/graphics/entity/mob/Mob.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/graphics/entity/mob/Player.class" afterPath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/graphics/entity/mob/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/input/Mouse.class" afterPath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/input/Mouse.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/level/Level.class" afterPath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/level/Level.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/level/tile/RockTile.class" afterPath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/level/tile/RockTile.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/level/tile/spawn_level/SpawnWall.class" afterPath="$PROJECT_DIR$/out/production/Java_Game/com/karan/rain/level/tile/spawn_level/SpawnWall.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/karan/rain/Game.java" afterPath="$PROJECT_DIR$/src/com/karan/rain/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/karan/rain/graphics/Screen.java" afterPath="$PROJECT_DIR$/src/com/karan/rain/graphics/Screen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/Mob.java" afterPath="$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/Mob.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/Player.java" afterPath="$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/karan/rain/input/Mouse.java" afterPath="$PROJECT_DIR$/src/com/karan/rain/input/Mouse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/karan/rain/level/Level.java" afterPath="$PROJECT_DIR$/src/com/karan/rain/level/Level.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/karan/rain/level/tile/RockTile.java" afterPath="$PROJECT_DIR$/src/com/karan/rain/level/tile/RockTile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/karan/rain/level/tile/spawn_level/SpawnWall.java" afterPath="$PROJECT_DIR$/src/com/karan/rain/level/tile/spawn_level/SpawnWall.java" />
     </list>
     <ignored path="Java_Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,8 +86,8 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/karan/rain/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="158" column="26" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="26" />
+            <state vertical-scroll-proportion="1.0344827">
+              <caret line="174" column="18" selection-start-line="174" selection-start-column="18" selection-end-line="174" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,10 +99,78 @@
         <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/Mob.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Level.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/karan/rain/level/Level.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/entity/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Projectile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/projectile/Projectile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
               <folding>
-                <element signature="e#1012#1013#0" expanded="true" />
-                <element signature="e#1066#1067#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RockTile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/karan/rain/level/tile/RockTile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpawnWall.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/karan/rain/level/tile/spawn_level/SpawnWall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+              <folding>
+                <element signature="e#667#668#0" expanded="true" />
+                <element signature="e#695#696#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WizardProjectile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/projectile/WizardProjectile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#563#564#0" expanded="true" />
+                <element signature="e#585#586#0" expanded="true" />
+                <element signature="e#695#696#0" expanded="true" />
+                <element signature="e#740#741#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,8 +179,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3094629">
-              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.17">
+              <caret line="53" column="67" selection-start-line="53" selection-start-column="67" selection-end-line="53" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,7 +192,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/Screen.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+              <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -142,9 +223,7 @@
         <option value="$PROJECT_DIR$/src/com/karan/rain/input/Keyboard.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/level/tile/GrassTile.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/level/tile/VoidTile.java" />
-        <option value="$PROJECT_DIR$/src/com/karan/rain/graphics/Screen.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/level/tile/FlowerTile.java" />
-        <option value="$PROJECT_DIR$/src/com/karan/rain/level/tile/RockTile.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/level/RandomLevel.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/graphics/SpriteSheet.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/level/tile/spawn_level/SpawnWaterTile.java" />
@@ -155,12 +234,16 @@
         <option value="$PROJECT_DIR$/src/com/karan/rain/level/tile/Tile.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/level/SpawnLevel.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/graphics/Sprite.java" />
-        <option value="$PROJECT_DIR$/src/com/karan/rain/level/Level.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/level/tile/TileCoordinate.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/graphics/entity/Entity.java" />
-        <option value="$PROJECT_DIR$/src/com/karan/rain/level/tile/spawn_level/SpawnWall.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/input/Mouse.java" />
+        <option value="$PROJECT_DIR$/src/com/karan/rain/level/Level.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/Game.java" />
+        <option value="$PROJECT_DIR$/src/com/karan/rain/graphics/Screen.java" />
+        <option value="$PROJECT_DIR$/src/com/karan/rain/level/tile/RockTile.java" />
+        <option value="$PROJECT_DIR$/src/com/karan/rain/level/tile/spawn_level/SpawnWall.java" />
+        <option value="$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/projectile/Projectile.java" />
+        <option value="$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/projectile/WizardProjectile.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/Mob.java" />
         <option value="$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/Player.java" />
       </list>
@@ -174,9 +257,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -221,6 +305,7 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -407,7 +492,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -708,17 +792,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="676" y="0" width="697" height="735" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32649842" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3168" sideWeight="0.506006" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296" sideWeight="0.493994" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32492113" sideWeight="0.493994" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.020558003" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -783,27 +867,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/input/Keyboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/level/Level.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/karan/rain/level/RandomLevel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,7 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1028,13 +1094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/level/tile/RockTile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/karan/rain/level/tile/FlowerTile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1046,7 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,7 +1126,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1083,7 +1140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.595">
           <caret line="16" column="65" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1115,19 +1171,11 @@
         <state vertical-scroll-proportion="0.39865997">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <element signature="e#298#299#0" expanded="true" />
-            <element signature="e#322#323#0" expanded="true" />
-            <element signature="e#344#345#0" expanded="true" />
-            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="false" />
+            <element signature="e#322#323#0" expanded="false" />
+            <element signature="e#344#345#0" expanded="false" />
+            <element signature="e#368#369#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/level/Level.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="46" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1135,9 +1183,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34170854">
           <caret line="12" column="30" selection-start-line="11" selection-start-column="3" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1149,81 +1194,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/entity/Entity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/Screen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79731995">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-          <folding>
-            <element signature="e#562#563#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/level/tile/spawn_level/SpawnWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5410385">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#667#668#0" expanded="false" />
-            <element signature="e#694#695#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/karan/rain/input/Mouse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.281407">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#624#625#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#916#917#0" expanded="true" />
-            <element signature="e#943#944#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="158" column="26" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="26" />
+        <state vertical-scroll-proportion="2.2173913">
+          <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/Screen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/Mob.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/level/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/level/tile/spawn_level/SpawnWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
           <folding>
-            <element signature="e#1012#1013#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
+            <element signature="e#667#668#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0344827">
+          <caret line="174" column="18" selection-start-line="174" selection-start-column="18" selection-end-line="174" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/level/tile/RockTile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/projectile/Projectile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/projectile/WizardProjectile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/karan/rain/graphics/entity/mob/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3094629">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.17">
+          <caret line="53" column="67" selection-start-line="53" selection-start-column="67" selection-end-line="53" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
