@@ -2,6 +2,7 @@ package com.karan.rain.level;
 
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.graphics.entity.Entity;
+import com.karan.rain.graphics.entity.mob.projectile.Projectile;
 import com.karan.rain.level.tile.GrassTile;
 import com.karan.rain.level.tile.Tile;
 
@@ -24,6 +25,7 @@ public class Level {
     public static Level spawn  = new SpawnLevel("/textures/levels/spawn.png");
 
     private List<Entity> entites = new ArrayList<Entity>();
+    private List<Projectile> projectiles = new ArrayList<Projectile>();
 
     public Level(int width,int height){ // generates a random level
         this.width =width;
@@ -49,16 +51,21 @@ public class Level {
 
     public void update() { //updates our level ,artificial intel (bots) or entities that need to be updated .Need to happen at 60 FPS
         for(int i=0;i < entites.size();i++) {
-            if(entites.get(i).distance() <= 100)
             entites.get(i).update();
-            else
-            {
-                entites.remove(i);
-            }
         }
+
+        for(int i=0;i< projectiles.size();i++) {
+            projectiles.get(i).update();
+            projectiles.get(i).update();
+        }
+
     }
     private void time() {
 
+    }
+
+    public List<Projectile> getProjectile() {
+        return projectiles;
     }
 
     public void render(int xScroll,int yScroll,Screen screen) {
@@ -88,12 +95,20 @@ public class Level {
             entites.get(i).render(screen);
         }
 
+        for(int i=0;i< projectiles.size();i++) {
+            projectiles.get(i).render(screen);
+        }
+
 
 
     }
 
     public void add(Entity e) {
         entites.add(e);
+    }
+
+    public void addProjectile(Projectile p) {
+        projectiles.add(p);
     }
 
 

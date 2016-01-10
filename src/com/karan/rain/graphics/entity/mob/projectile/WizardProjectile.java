@@ -9,9 +9,9 @@ import com.karan.rain.graphics.Sprite;
 public class WizardProjectile extends Projectile {
     public WizardProjectile(int x, int y, double dir) {
         super(x, y, dir);
-        range = 200;
+        range = random.nextInt(40) + 80;
         damage = 20;
-        speed = 4;
+        speed = 1;
         rateOfFire = 15;
         sprite = Sprite.projectile_wizard;
         sprite = Sprite.projectile_wizard;
@@ -28,7 +28,9 @@ public class WizardProjectile extends Projectile {
     protected void move() {
         x += nx;
         y += ny;
-        System.out.println("Distance: " + distance());
+        if (distance() > range) {
+            remove();
+        }
     }
 
     public int distance() {

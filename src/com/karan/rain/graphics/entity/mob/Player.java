@@ -3,6 +3,7 @@ package com.karan.rain.graphics.entity.mob;
 import com.karan.rain.Game;
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.graphics.Sprite;
+import com.karan.rain.graphics.entity.mob.projectile.Projectile;
 import com.karan.rain.input.Keyboard;
 import com.karan.rain.input.Mouse;
 
@@ -48,6 +49,10 @@ public class Player extends Mob{
     }
 
     private void clear() {
+        for(int i=0;i< level.getProjectile().size();i++) {
+            Projectile p = level.getProjectile().get(i);
+            if(p.isRemoved()) level.getProjectile().remove(i);
+        }
     }
 
     private void updateShooting() {
