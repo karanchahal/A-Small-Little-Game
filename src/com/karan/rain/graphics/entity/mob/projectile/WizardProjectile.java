@@ -7,12 +7,15 @@ import com.karan.rain.graphics.Sprite;
  * Created by Lenovo on 12/21/2015.
  */
 public class WizardProjectile extends Projectile {
+
+    public static final int FIRE_RATE = 5;
+
     public WizardProjectile(int x, int y, double dir) {
         super(x, y, dir);
         range = random.nextInt(40) + 80;
         damage = 20;
         speed = 1;
-        rateOfFire = 15;
+
         sprite = Sprite.projectile_wizard;
         sprite = Sprite.projectile_wizard;
         //Vector Maths..

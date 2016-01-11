@@ -4,6 +4,7 @@ import com.karan.rain.Game;
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.graphics.Sprite;
 import com.karan.rain.graphics.entity.mob.projectile.Projectile;
+import com.karan.rain.graphics.entity.mob.projectile.WizardProjectile;
 import com.karan.rain.input.Keyboard;
 import com.karan.rain.input.Mouse;
 
@@ -16,6 +17,9 @@ public class Player extends Mob{
     private Sprite sprite;
     private int anime;
     private boolean walking = false;
+
+    private int fireRate = 0;
+
     public Player(Keyboard input) {
         this.input = input;
         sprite = Sprite.player_forward;
@@ -26,10 +30,13 @@ public class Player extends Mob{
         this.y = y;
         sprite = Sprite.player_forward;
         this.input = input;
+        fireRate = WizardProjectile.FIRE_RATE;
     }
 
     public void update() {
      //we want the player to move when we press keyboard button
+
+        if(fireRate > 0) fireRate--;
 
         int xa =0,ya =0;
         if(anime < 7500) anime++; else anime =0;
@@ -57,11 +64,14 @@ public class Player extends Mob{
 
     private void updateShooting() {
 
-        if(Mouse.getButton() == 1) {
+        if(Mouse.getButton() == 1 && fireRate <= 0) {
             double dx = (Mouse.getX() - (Game.windowWidth() / 2));
             double dy = (Mouse.getY() - (Game.windowHeight() / 2));
             double dir = Math.atan2(dy,dx);
+
             shoot(x,y,dir);
+
+            fireRate = WizardProjectile.FIRE_RATE;
         }
     }
 
