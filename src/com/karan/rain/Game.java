@@ -19,7 +19,7 @@ import java.awt.image.DataBufferInt;
 /**
  * Created by user on 20/11/2015.
  */
-public class Game extends Canvas implements Runnable{ // runnable implements run and "this"  including Canvas means we made our class a sub-part of Canvas
+public class Game extends JFrame implements Runnable{ // runnable implements run and "this"  including Canvas means we made our class a sub-part of Canvas
 
     //as we extend canvas we should serialize the class
     private static final long serialVersionUID =1L;
@@ -46,7 +46,7 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
         Dimension size = new Dimension(width*scale,height*scale);
         setPreferredSize(size); // it is a method of the Canvas
 
-        frame = new JFrame();
+        frame = this;
         screen =  new Screen(width,height);
         key = new Keyboard();
 
@@ -177,13 +177,12 @@ public class Game extends Canvas implements Runnable{ // runnable implements run
 
     public static void main(String[] args) {
         Game game = new Game(); // starting our game
-        game.frame.setResizable(false); // important causes tons of graphical errors
-        game.frame.setTitle(Game.title);
-        game.frame.add(game); // We can do this is by using "implements Canvas" makes it a part of the Canvas library so we can actually add an instance/component of game in the frame
-        game.frame.pack(); // pack sets the size of the frame according to the component which we did in our constructor
-        game.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        game.frame.setLocationRelativeTo(null);
-        game.frame.setVisible(true);
+        game.setResizable(false); // important causes tons of graphical errors
+        game.setTitle(Game.title);
+        game.pack(); // pack sets the size of the frame according to the component which we did in our constructor
+        game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        game.setLocationRelativeTo(null);
+        game.setVisible(true);
 
         game.start();
     }
