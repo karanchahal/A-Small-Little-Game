@@ -49,6 +49,8 @@ public class Level {
 
     }
 
+
+
     public void update() { //updates our level ,artificial intel (bots) or entities that need to be updated .Need to happen at 60 FPS
         for(int i=0;i < entites.size();i++) {
             entites.get(i).update();
@@ -64,6 +66,18 @@ public class Level {
 
     }
 
+    public boolean tileCollision(double x,double y,double xa,double ya,double size) {
+        boolean solid =  false;
+
+        for (int i=0;i<4;i++) {
+            int xt  = (((int)x + (int)xa) + i%2*(int)size/2 -5)/16; // Pixel perfect collision detection
+            int yt  = (((int)y + (int)ya) + i/2*(int)size/2 -5)/16;;
+
+            if(getTile(xt,yt).solid())
+                solid = true;
+        }
+        return solid;
+    }
     public List<Projectile> getProjectile() {
         return projectiles;
     }
@@ -108,7 +122,9 @@ public class Level {
     }
 
     public void addProjectile(Projectile p) {
+        p.init(this);
         projectiles.add(p);
+
     }
 
 

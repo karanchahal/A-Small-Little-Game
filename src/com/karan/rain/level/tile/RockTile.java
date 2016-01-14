@@ -25,7 +25,7 @@ public class RockTile extends Tile{
     }
 
     public boolean solid() {
-        return false; // return false by deafault .Now deafult tile you can pass through
+        return true; // return false by deafault .Now deafult tile you can pass through
     }
 
 
