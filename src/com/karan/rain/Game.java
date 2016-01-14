@@ -155,6 +155,7 @@ public class Game extends JFrame implements Runnable{ // runnable implements run
         player.render(screen);
         Sprite sprite = new Sprite(2,2,0xfffff);
 
+        /*
         Random random = new Random();
 
         for(int i=0;i< 100;i++)
@@ -163,6 +164,7 @@ public class Game extends JFrame implements Runnable{ // runnable implements run
             int y = random.nextInt(20);
             screen.renderSprite(width - 60 + x,50 + y,sprite,false);
         }
+        */
 
 
 

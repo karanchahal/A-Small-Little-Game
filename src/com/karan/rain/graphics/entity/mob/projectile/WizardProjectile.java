@@ -2,6 +2,7 @@ package com.karan.rain.graphics.entity.mob.projectile;
 
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.graphics.Sprite;
+import com.karan.rain.graphics.entity.mob.projectile.particle.Particle;
 
 /**
  * Created by Lenovo on 12/21/2015.
@@ -26,6 +27,8 @@ public class WizardProjectile extends Projectile {
 
     public void update() {
         if(level.tileCollision(x,y,nx,ny,7)) {
+            Particle p =new Particle((int)x,(int)y,50,50);
+            level.add(p);
             remove();
         }
         move();

@@ -4,6 +4,7 @@ import com.karan.rain.graphics.Sprite;
 import com.karan.rain.graphics.entity.Entity;
 import com.karan.rain.graphics.entity.mob.projectile.Projectile;
 import com.karan.rain.graphics.entity.mob.projectile.WizardProjectile;
+import com.karan.rain.graphics.entity.mob.projectile.particle.Particle;
 
 import java.util.ArrayList;
 import java.util.List;
