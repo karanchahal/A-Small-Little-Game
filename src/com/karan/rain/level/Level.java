@@ -2,7 +2,9 @@ package com.karan.rain.level;
 
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.graphics.entity.Entity;
+import com.karan.rain.graphics.entity.Spawner;
 import com.karan.rain.graphics.entity.mob.projectile.Projectile;
+import com.karan.rain.graphics.entity.mob.projectile.particle.Particle;
 import com.karan.rain.level.tile.GrassTile;
 import com.karan.rain.level.tile.Tile;
 
@@ -26,6 +28,7 @@ public class Level {
 
     private List<Entity> entites = new ArrayList<Entity>();
     private List<Projectile> projectiles = new ArrayList<Projectile>();
+    private List<Particle> particles = new ArrayList<Particle>();
 
     public Level(int width,int height){ // generates a random level
         this.width =width;
@@ -39,6 +42,7 @@ public class Level {
         loadLevel(path); //to read width and height of the level image in path
         generateLevel(); //generates random level a tile for every square unit
 
+        add(new Spawner(16*16,62*16,Spawner.Type.PARTICLE,500,this));
     }
     protected void generateLevel() {
 
@@ -58,7 +62,10 @@ public class Level {
 
         for(int i=0;i< projectiles.size();i++) {
             projectiles.get(i).update();
-            projectiles.get(i).update();
+        }
+
+        for(int i=0;i< particles.size();i++) {
+            particles.get(i).update();
         }
 
     }
@@ -113,19 +120,26 @@ public class Level {
             projectiles.get(i).render(screen);
         }
 
+        for(int i=0;i< particles.size();i++) {
+            particles.get(i).render(screen);
+        }
+
 
 
     }
 
     public void add(Entity e) {
-        entites.add(e);
+        e.init(this);
+        if(e instanceof Particle) {
+            particles.add((Particle)e);
+        }else if(e instanceof Projectile) {
+            projectiles.add((Projectile) e);
+        }else {
+            entites.add(e);
+        }
     }
 
-    public void addProjectile(Projectile p) {
-        p.init(this);
-        projectiles.add(p);
 
-    }
 
 
     public Tile getTile(int x,int y) { // We need to get a tile to use for our randomly rendered level

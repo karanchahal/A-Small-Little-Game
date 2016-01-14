@@ -15,7 +15,7 @@ public class WizardProjectile extends Projectile {
         super(x, y, dir);
         range = random.nextInt(40) + 80;
         damage = 20;
-        speed = 1;
+        speed = 2;
 
         sprite = Sprite.projectile_wizard;
         sprite = Sprite.projectile_wizard;

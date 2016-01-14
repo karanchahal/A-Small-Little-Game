@@ -12,7 +12,6 @@ import java.util.List;
  */
 public class Particle extends Entity{
 
-    private List<Particle> particles = new ArrayList<Particle>();
     private Sprite sprite;
 
     private int life;
@@ -36,10 +35,7 @@ public class Particle extends Entity{
     public Particle(int x,int y,int life,int amount) {
 
         this(x,y,life); // calling other constructor
-        for(int i=0;i<amount-1;i++) {
-            particles.add(new Particle(x,y,life));
-        }
-        particles.add(this);
+
 
 
 

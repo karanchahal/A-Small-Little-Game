@@ -49,7 +49,7 @@ public abstract class Mob extends Entity {
         //System.out.println("Angle: "+ direction);
 
         Projectile p = new WizardProjectile(x,y,direction);
-        level.addProjectile(p);
+        level.add(p);
 
     }
 
