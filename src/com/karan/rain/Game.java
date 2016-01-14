@@ -1,6 +1,7 @@
 package com.karan.rain;
 
 import com.karan.rain.graphics.Screen;
+import com.karan.rain.graphics.Sprite;
 import com.karan.rain.graphics.entity.mob.Player;
 import com.karan.rain.input.Keyboard;
 import com.karan.rain.input.Mouse;
@@ -15,6 +16,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBuffer;
 import java.awt.image.DataBufferInt;
+import java.util.Random;
 
 /**
  * Created by user on 20/11/2015.
@@ -151,6 +153,18 @@ public class Game extends JFrame implements Runnable{ // runnable implements run
         int yScroll = player.y - screen.height/2;
         level.render(xScroll,yScroll,screen);
         player.render(screen);
+        Sprite sprite = new Sprite(2,2,0xfffff);
+
+        Random random = new Random();
+
+        for(int i=0;i< 100;i++)
+        {
+            int x = random.nextInt(20);
+            int y = random.nextInt(20);
+            screen.renderSprite(width - 60 + x,50 + y,sprite,false);
+        }
+
+
 
 
         for(int i=0;i< pixels.length;i++) {

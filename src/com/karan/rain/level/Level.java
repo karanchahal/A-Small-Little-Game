@@ -70,8 +70,8 @@ public class Level {
         boolean solid =  false;
 
         for (int i=0;i<4;i++) {
-            int xt  = (((int)x + (int)xa) + i%2*(int)size/2 -5)/16; // Pixel perfect collision detection
-            int yt  = (((int)y + (int)ya) + i/2*(int)size/2 -5)/16;;
+            int xt  = (((int)x + (int)xa) + i%2*(int)size*2 -12)/16; // Pixel perfect collision detection
+            int yt  = (((int)y + (int)ya) + i/2*(int)size*2)/16;;
 
             if(getTile(xt,yt).solid())
                 solid = true;

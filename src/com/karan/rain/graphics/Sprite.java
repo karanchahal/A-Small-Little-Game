@@ -6,7 +6,7 @@ package com.karan.rain.graphics;
 public class Sprite {
 
     public final int SIZE;
-    private int x,y;
+    private int x,y,width,height;
     public int[] pixels;
     private SpriteSheet sheet;
 
@@ -45,6 +45,8 @@ public class Sprite {
 
     public Sprite(int size,int x,int y,SpriteSheet sheet) {
         SIZE = size;
+        this.width = size;
+        this.height = size;
         pixels = new int[SIZE*SIZE];
         this.x =x * size;   // find starting point of out sprite and each sprite is made of 16 by 16 pixels/grid therefore we take x as x into 16
 
@@ -55,8 +57,18 @@ public class Sprite {
         load();
     }
 
+    public Sprite(int width,int height,int colour) {
+        SIZE = -1;
+        this.width = width;
+        this.height= height;
+        pixels = new int[width*height];
+        setColour(colour);
+    }
+
     public Sprite(int size,int colour) {
         SIZE = size;
+        this.width = size;
+        this.height = size;
         pixels = new int[SIZE*SIZE];
         setColour(colour);
     }
@@ -66,6 +78,14 @@ public class Sprite {
         {
             pixels[i] = colour;
         }
+    }
+
+    public int getWidth(){
+        return width;
+    }
+
+    public int getHeight(){
+        return height;
     }
 
 
