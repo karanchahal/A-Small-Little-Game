@@ -26,5 +26,6 @@ A* Search Algorithm
 Mobs and NPS's
 
 #ScreenShots
-
+![alt tag](https://raw.github.com/karanchahal/A-Small-Little-Game/master/Screenshots/one.png)
+![alt tag](Screenshots/two.png)
 
