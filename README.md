@@ -36,7 +36,10 @@ Mobs and NPS's
 ![alt tag](Screenshots/two.png)
 
 
+#Learnt From
 
-I am following the brilliant course on youtube on Game Programming taught by the amazing Yan (Cherno !!)
+I am following the brilliant course on youtube on Game Programming taught by the amazing Yan (Cherno !!).
+
 The link is given as
+
 #https://www.youtube.com/user/TheChernoProject
