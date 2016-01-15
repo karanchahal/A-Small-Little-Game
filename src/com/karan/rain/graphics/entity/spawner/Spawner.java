@@ -1,5 +1,6 @@
-package com.karan.rain.graphics.entity;
+package com.karan.rain.graphics.entity.spawner;
 
+import com.karan.rain.graphics.entity.Entity;
 import com.karan.rain.graphics.entity.mob.projectile.particle.Particle;
 import com.karan.rain.level.Level;
 
@@ -9,7 +10,7 @@ import java.util.List;
 /**
  * Created by Lenovo on 1/14/2016.
  */
-public class Spawner extends Entity{
+public class Spawner extends Entity {
 
     public enum Type {
         MOB, PARTICLE;
@@ -22,10 +23,6 @@ public class Spawner extends Entity{
         this.x = x;
         this.y = y;
         this.type = type;
-        for(int i=0;i< amount;i++) {
-            if(type == Type.PARTICLE) {
-                level.add(new Particle(x,y,50));
-            }
-        }
+
     }
 }

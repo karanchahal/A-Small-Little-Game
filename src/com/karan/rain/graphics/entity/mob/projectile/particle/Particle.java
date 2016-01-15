@@ -15,6 +15,7 @@ public class Particle extends Entity{
     private Sprite sprite;
 
     private int life;
+    private int time= 0;
 
     protected double xx,yy,xa,ya;
 
@@ -26,7 +27,7 @@ public class Particle extends Entity{
         this.xx = x;
         this.yy = y;
 
-        this.life = life;
+        this.life = life + random.nextInt(50) - 20;
 
         this.xa = random.nextGaussian(); // b/w -1 and 1 will give you a normal distribution more likely to be near 0 than 1 and -1
         this.ya = random.nextGaussian();
@@ -42,6 +43,12 @@ public class Particle extends Entity{
     }
 
     public void update() {
+        time++;
+        System.out.println("Time: " + time);
+        if(time > life) {
+            remove();
+        }
+
         this.xx += xa;
         this.yy += ya;
     }

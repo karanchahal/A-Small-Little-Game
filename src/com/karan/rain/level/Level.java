@@ -2,10 +2,8 @@ package com.karan.rain.level;
 
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.graphics.entity.Entity;
-import com.karan.rain.graphics.entity.Spawner;
 import com.karan.rain.graphics.entity.mob.projectile.Projectile;
 import com.karan.rain.graphics.entity.mob.projectile.particle.Particle;
-import com.karan.rain.level.tile.GrassTile;
 import com.karan.rain.level.tile.Tile;
 
 import java.util.ArrayList;
@@ -42,7 +40,7 @@ public class Level {
         loadLevel(path); //to read width and height of the level image in path
         generateLevel(); //generates random level a tile for every square unit
 
-        add(new Spawner(16*16,62*16,Spawner.Type.PARTICLE,500,this));
+
     }
     protected void generateLevel() {
 
@@ -57,15 +55,27 @@ public class Level {
 
     public void update() { //updates our level ,artificial intel (bots) or entities that need to be updated .Need to happen at 60 FPS
         for(int i=0;i < entites.size();i++) {
-            entites.get(i).update();
+            if(entites.get(i).isRemoved()){
+                entites.remove(i);
+            }else {
+                entites.get(i).update();
+            }
         }
 
         for(int i=0;i< projectiles.size();i++) {
-            projectiles.get(i).update();
+            if(projectiles.get(i).isRemoved()){
+                projectiles.remove(i);
+            }else {
+                projectiles.get(i).update();
+            }
         }
 
         for(int i=0;i< particles.size();i++) {
-            particles.get(i).update();
+            if(particles.get(i).isRemoved()){
+                particles.remove(i);
+            }else {
+                particles.get(i).update();
+            }
         }
 
     }

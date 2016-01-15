@@ -2,6 +2,8 @@ package com.karan.rain.graphics.entity.mob.projectile;
 
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.graphics.Sprite;
+import com.karan.rain.graphics.entity.spawner.ParticleSpawner;
+import com.karan.rain.graphics.entity.spawner.Spawner;
 import com.karan.rain.graphics.entity.mob.projectile.particle.Particle;
 
 /**
@@ -27,8 +29,7 @@ public class WizardProjectile extends Projectile {
 
     public void update() {
         if(level.tileCollision(x,y,nx,ny,7)) {
-            Particle p =new Particle((int)x,(int)y,50,50);
-            level.add(p);
+            level.add(new ParticleSpawner((int)x,(int)y,44,5,level));
             remove();
         }
         move();
