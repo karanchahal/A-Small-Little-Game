@@ -9,16 +9,22 @@ The features of this Game
 Allows for the following types of Levels
 Random Levels
 SpriteSheet levels
+
+#FPS Counter
+Calculates fps and updates .A timer has been implemented.
+
 #Tiles
 16 by 16 tiles of various types
 Rocks
 Floor
 Grass
 Water
+
 #Weapons and Shooting
 Allows for particle/bullet creation.
 #Collision Detection
 Pixel Perffect Collision
+
 #Sprites
 Various sprites also the player king sprite
 #Lots of Cool Stuff Coming Up
@@ -29,3 +35,8 @@ Mobs and NPS's
 ![alt tag](https://raw.github.com/karanchahal/A-Small-Little-Game/master/Screenshots/one.png)
 ![alt tag](Screenshots/two.png)
 
+
+
+I am following the brilliant course on youtube on Game Programming taught by the amazing Yan (Cherno !!)
+The link is given as
+#https://www.youtube.com/user/TheChernoProject
