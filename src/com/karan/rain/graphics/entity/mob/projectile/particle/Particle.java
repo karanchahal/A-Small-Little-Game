@@ -49,7 +49,6 @@ public class Particle extends Entity{
 
     public void update() {
         time++;
-        System.out.println("Time: " + time);
         if(time > life) {
             remove();
         }
