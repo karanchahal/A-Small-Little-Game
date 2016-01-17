@@ -95,6 +95,7 @@ public class Level {
         }
         return solid;
     }
+
     public List<Projectile> getProjectile() {
         return projectiles;
     }
