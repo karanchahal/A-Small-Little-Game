@@ -29,11 +29,6 @@ public class WizardProjectile extends Projectile {
 
     public void update() {
 
-        if(level.waterCollision((int)(x + nx),(int)(y+ny),7,5,4)) {
-            level.add(new ParticleSpawner((int)x,(int)y,20,20,level,Sprite.particle_water));
-            remove();
-            System.out.println("In the water");
-        }
 
         if(level.tileCollision((int)(x + nx),(int)(y+ny),7,5,4)) {
 

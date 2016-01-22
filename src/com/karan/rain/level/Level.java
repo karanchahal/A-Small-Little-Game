@@ -92,9 +92,6 @@ public class Level {
 
             if(getTile(xt,yt).solid())
                 solid = true;
-            if(getTile(xt,yt).isWater()) {
-                solid = true;
-            }
         }
         return solid;
     }
