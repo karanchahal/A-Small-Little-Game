@@ -19,6 +19,7 @@ public class Tile {
 
     public int x,y;
     public Sprite sprite;
+    boolean water = false;
 
     //EACH TILE SHOULD HAVE A SPRITE
     public static Tile grass = new GrassTile(Sprite.grass);
@@ -53,6 +54,10 @@ public class Tile {
 
     public boolean solid() {
         return false; // return false by deafault .Now deafult tile you can pass through
+    }
+
+    public boolean isWater() {
+        return false;
     }
 
 }

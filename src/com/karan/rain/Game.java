@@ -2,6 +2,7 @@ package com.karan.rain;
 
 import com.karan.rain.graphics.Screen;
 import com.karan.rain.graphics.Sprite;
+import com.karan.rain.graphics.entity.mob.Dummy;
 import com.karan.rain.graphics.entity.mob.Player;
 import com.karan.rain.input.Keyboard;
 import com.karan.rain.input.Mouse;
@@ -55,6 +56,7 @@ public class Game extends JFrame implements Runnable{ // runnable implements run
         level = Level.spawn; //instantiating random level
         TileCoordinate playerSpawn = new TileCoordinate(19,65);
         player  = new Player(playerSpawn.x(),playerSpawn.y(),key);
+
         player.init(level);
         frame.addKeyListener(key);
         Mouse mouse = new Mouse();

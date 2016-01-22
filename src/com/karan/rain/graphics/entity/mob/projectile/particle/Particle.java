@@ -20,8 +20,8 @@ public class Particle extends Entity{
     protected double xx,yy,zz;
     protected double xa,ya,za;
 
-    public Particle(int x,int y,int life) {
-        sprite = Sprite.particle_normal;
+    public Particle(int x,int y,int life,Sprite sprites) {
+        sprite = sprites;
         this.x = x;
         this.y = y;
 
@@ -36,9 +36,9 @@ public class Particle extends Entity{
         this.zz = random.nextFloat() + 2.0;
     }
 
-    public Particle(int x,int y,int life,int amount) {
+    public Particle(int x,int y,int life,int amount,Sprite sprite) {
 
-        this(x,y,life); // calling other constructor
+        this(x,y,life,sprite); // calling other constructor
 
 
 
@@ -55,7 +55,7 @@ public class Particle extends Entity{
         if(zz < 0) {
             zz = 0;
             za *= -0.5;
-            //xa *= 0.4;
+            xa *= 0.4;
             ya *= 0.4;
         }
 

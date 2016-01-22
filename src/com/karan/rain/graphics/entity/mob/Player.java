@@ -141,6 +141,7 @@ public class Player extends Mob{
 
         screen.renderPlayer(x - 16,y -16,sprite,flip);
 
+
     }
 
 }

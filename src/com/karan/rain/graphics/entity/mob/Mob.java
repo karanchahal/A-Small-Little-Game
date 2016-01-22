@@ -5,6 +5,7 @@ import com.karan.rain.graphics.entity.Entity;
 import com.karan.rain.graphics.entity.mob.projectile.Projectile;
 import com.karan.rain.graphics.entity.mob.projectile.WizardProjectile;
 import com.karan.rain.graphics.entity.mob.projectile.particle.Particle;
+import com.karan.rain.graphics.entity.spawner.ParticleSpawner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,18 @@ public abstract class Mob extends Entity {
 
         if(!collision(xa,0)) {
             x += xa;
+
         }
+
+        if(waterCollision(xa,0)) {
+            level.add(new ParticleSpawner((int)x,(int)y,20,20,level,Sprite.particle_water));
+        }
+
+        if(waterCollision(0,ya)) {
+            level.add(new ParticleSpawner((int)x,(int)y,20,20,level,Sprite.particle_water));
+        }
+
+
 
     }
 
@@ -67,6 +79,23 @@ public abstract class Mob extends Entity {
 
         return solid;
     }
+
+
+    private boolean waterCollision(int xa,int ya) {
+        boolean solid =  false;
+
+        for (int i=0;i<4;i++) {
+            int xt  = ((x + xa) + i%2*14 - 7)/16; // Pixel perfect collision detection
+            int yt  = ((y + ya) + i/2*12 + 3)/16;;
+
+            if(level.getTile(xt,yt).isWater())
+                solid = true;
+        }
+
+
+        return solid;
+    }
+
 
     public void render() {
 

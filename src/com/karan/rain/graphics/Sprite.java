@@ -44,6 +44,7 @@ public class Sprite {
 
     //particles
     public static Sprite particle_normal = new Sprite(3,0xaaaaaa);
+    public static Sprite particle_water = new Sprite(3,0x0026FF);
 
 
     public Sprite(int size,int x,int y,SpriteSheet sheet) {

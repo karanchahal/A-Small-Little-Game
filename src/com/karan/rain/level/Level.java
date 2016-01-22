@@ -92,6 +92,23 @@ public class Level {
 
             if(getTile(xt,yt).solid())
                 solid = true;
+            if(getTile(xt,yt).isWater()) {
+                solid = true;
+            }
+        }
+        return solid;
+    }
+
+
+    public boolean waterCollision(int x,int y,int size,int xOffset,int yOffset) {
+        boolean solid =  false;
+
+        for (int i=0;i<4;i++) {
+            int xt  = (x - i%2*size + xOffset) >> 4; // Pixel Perfect collision detection
+            int yt  = (y - i/2*size + yOffset) >> 4;
+            if(getTile(xt,yt).isWater()) {
+                solid = true;
+            }
         }
         return solid;
     }

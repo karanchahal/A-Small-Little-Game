@@ -1,6 +1,7 @@
 package com.karan.rain.level;
 
 import com.karan.rain.graphics.Screen;
+import com.karan.rain.graphics.entity.mob.Dummy;
 import com.karan.rain.level.tile.Tile;
 
 import javax.imageio.ImageIO;
@@ -35,6 +36,8 @@ public class SpawnLevel extends Level {
             e.printStackTrace();
             System.out.println("Exception ! Could not load level file");
         }
+        add(new Dummy(20,35));
+
     }
 
     //Grass = 0x00FF21
